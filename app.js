@@ -15,3 +15,11 @@ window.addEventListener('scroll', () => {
         header.classList.remove('active-header')
     }
 })
+
+
+const downBtn = document.getElementById('down-btn');
+
+downBtn.addEventListener('click', () => {
+    var top = window.innerHeight;
+    window.scrollTo(0,top);
+})

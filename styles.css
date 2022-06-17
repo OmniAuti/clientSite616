@@ -10,16 +10,35 @@
   --header-color: #51464f;
 }
 
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 article {
   background-color: var(--article-color);
   color: var(--article-text-color);
   font-family: "Georgia";
+  padding: 25px 50px;
 }
 
 section button {
   width: 50px;
-  z-index: 99;
+  height: 50px;
+  z-index: 98;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 25px;
+}
+
+section button img {
+  width: 40px;
+}
+
+section button:active img {
+  width: 35px;
 }
 
 a {
@@ -44,7 +63,7 @@ header {
 }
 
 .active-header {
-    background-color: var(--header-color);
+  background-color: var(--header-color);
 }
 
 header > a {
@@ -114,7 +133,7 @@ nav ul li:nth-of-type(3) > a::after {
 }
 
 ul li a:hover {
-    color:rgba(255, 255,255, 0.5)
+  color: rgba(255, 255, 255, 0.5);
 }
 
 ul li a:hover::before {
@@ -284,12 +303,12 @@ nav ul li:nth-of-type(3):hover .sub-list {
   .active-hamburger .hamburger {
     background-color: transparent;
   }
-  
+
   .active-hamburger .hamburger::before {
     top: 0px;
     transform: rotate(45deg);
   }
-  
+
   .active-hamburger .hamburger::after {
     top: 0px;
     transform: rotate(-45deg);
@@ -297,19 +316,28 @@ nav ul li:nth-of-type(3):hover .sub-list {
 }
 
 @media screen and (max-width: 375px) {
-    .logo-cont h4 {
-        color: #fff;
-        padding-left: 10px;
-        font-weight: 300;
-        font-size: 16px;
-      }
-    
-      .logo-cont {
-        padding-left: 15px;
-      }
+  .logo-cont h4 {
+    color: #fff;
+    padding-left: 10px;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  .logo-cont {
+    padding-left: 15px;
+  }
 }
 
-
+li a.active-page::before {
+  content: "";
+  position: absolute;
+  background-color: var(--article-color);
+  width: 100%;
+  height: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
 
 /*===================== HOME SECTION ==========================*/
 
@@ -324,9 +352,10 @@ nav ul li:nth-of-type(3):hover .sub-list {
 
 .home {
   background-image: url("./imgs/home.jpeg");
-  background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -347,4 +376,229 @@ nav ul li:nth-of-type(3):hover .sub-list {
 .home h1 {
   color: var(--article-color);
   z-index: 98;
+  font-size: 36px;
+  text-align: center;
+  margin-top: 35vh;
 }
+
+.home-article h2,
+.home-article p {
+  margin: 50px 50px;
+}
+
+.home-article h2 {
+  font-size: 36px;
+}
+
+.home-article p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.about-us {
+  background-image: url("./imgs/aboutUs.jpeg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.about-us h1 {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-weight: 200;
+  font-size: 7rem;
+  margin-top: 60vh;
+  z-index: 98;
+}
+
+.about-us::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.about-us-article p {
+  line-height: 25px;
+  padding: 0px 25px;
+  margin: 50px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+.our-services {
+  background-image: url("./imgs/pexels-artem-podrez-8087859.jpeg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.our-services h1 {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-weight: 200;
+  font-size: 7rem;
+  margin-top: 60vh;
+  z-index: 98;
+}
+
+.our-services::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.our-services-article p {
+  line-height: 25px;
+  padding: 0px 25px;
+  margin: 50px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+.our-services-article div:nth-of-type(2) {
+  display: flex;
+}
+
+.our-services-article div:nth-of-type(2) img {
+  width: 45%;
+  height: auto;
+}
+
+.what-we-do {
+  background-image: url("./imgs/pexels-artem-podrez-8087859.jpeg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.what-we-do h1 {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-weight: 200;
+  font-size: 7rem;
+  margin-top: 60vh;
+  z-index: 98;
+}
+
+.what-we-do::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.what-we-do-article p {
+  line-height: 25px;
+  padding: 0px 25px;
+  margin: 50px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  line-height: 35px;
+}
+
+.what-we-do-article div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.what-we-do-article div img {
+  max-width: 50%;
+  max-height: 75vh;
+}
+.what-we-do-article div p,
+.what-we-do-article div ul {
+  width: 50%;
+}
+
+.what-we-do-article div ul {
+  list-style-type: square;
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.what-we-do-article div ul li {
+  margin: 20px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+
+.contact-us {
+    background-image: url("./imgs/pexels-jep-gambardella-6222770.jpeg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .contact-us h1 {
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    font-weight: 200;
+    font-size: 7rem;
+    margin-top: 60vh;
+    z-index: 98;
+  }
+  
+  .contact-us::after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+  }
+  
+  .contact-us-article p {
+    line-height: 25px;
+    padding: 0px 25px;
+    margin: 50px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    line-height: 35px;
+    text-align: center;
+  }

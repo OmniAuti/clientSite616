@@ -1,64 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <link rel="icon" href="./imgs/favicon.png"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="./imgs/favicon.png" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Lighting The Way ABA</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
       <header>
         <a href="/index.html" target="_self">
-        <div class="logo-cont">
-          <img
-            class="logo"
-            src="imgs/logo.png"
-            alt="Lighting The Way ABA Logo"
-          />
-          <h4>Lighting The Way ABA</h4>
-        </div>
+          <div class="logo-cont">
+            <img
+              class="logo"
+              src="imgs/logo.png"
+              alt="Lighting The Way ABA Logo"
+            />
+            <h4>Lighting The Way ABA</h4>
+          </div>
         </a>
         <button class="nav-hamburger-cont">
-            <div class="hamburger"></div>
+          <div class="hamburger"></div>
         </button>
         <nav>
           <ul>
             <li><a href="/index.html" target="_self">Home</a></li>
             <li><a href="/about-us.html" target="_self">About Us</a></li>
-            <li><a href="/our-services.html" target="_self">Our Services </a><ul class="sub-list"><li><a href="what-we-do.html" target="_self">What We Do</a></li></ul></li>
+            <li>
+              <a class="active-page" href="/our-services.html" target="_self"
+                >Our Services
+              </a>
+              <ul class="sub-list">
+                <li><a href="what-we-do.html" target="_self">What We Do</a></li>
+              </ul>
+            </li>
             <li><a href="contact-us.html" target="_self">Contact Us</a></li>
           </ul>
         </nav>
       </header>
-        <section class="our-services">
-            <h1>Our Services</h1>
-            <button>Scroll Down</button>
-            <article>
-                <div>
-<p>What is Applied Behavior Analysis (ABA)?</p>
-<p>“Applied behavior analysis (ABA) is a science that uses principles of learning and motivation that have come from decades of scientific research to solve problems of behavior that matter to society." (Tarbox & Tarbox, 2017)</p>
-<p>If you are a parent, friend, or relative of a child with special needs or a child who is normally developed but who has very challenging behavior, it is likely that you have asked yourself on repeating occasions: why does my child behave like that, and what can I do about it? I would also imagine that most of your answers are ascribed to circular reasoning:  he does it because he is autistic, he has ADHD, or it is due to some other diagnosis.</p>
-<p>ABA does not deny the value of a diagnosis but rather finds the ‘why’ in another domain: The environment.  In other words, we would not justify a tantrum with an immature or undeveloped brain and so wait or hope that he outgrows phase. Applied behavior analysis believes and works on the basis that every behavior has a purpose in one’s environment, and the behavior will only survive if that purpose is fulfilled.</p>
-<p>ABA scientific approach has been successfully used among different populations with a special impact within the ASD community. More than 1000 published studies support ABA as an evidence-based treatment for autism. (National Autism Center, 2015)</p>
-                </div>
-                <div>
-                    <img src="" alt=""/>
-                    <p>LTW focuses on Early Intensive Behavioral Intervention (EIBI) where learners start our services at an early age (2-6 years old).  Research has shown that this treatment approach produces the largest gains when done consistently." (Tarbox & Tarbox, 2017)</p>
-                    <p>We believe that every child with autism is able to learn- perhaps at different levels and speeds, based on individual characteristics, but important gains can be made when a combination of skills acquisition and reduction of challenging behaviors is included within a treatment plan. Our intervention primarily targets communication, social, and self-help skills to either boost the current client’s abilities or replace maladaptive behaviors.</p>
-                    <p>LTW’s services are provided in our learner’s homes, schools, and communities. In this way, we involve his/her support system within our treatment which enhances the maintenance and generalization of the intervention results.</p>
-                </div>
-            </article>
-        </section>
+      <section class="our-services">
+        <h1>Our Services</h1>
+        <button id="down-btn"><img src="./imgs/down-arrow-white.svg" /></button>
+      </section>
+      <article class="our-services-article">
+        <div>
+          <p>What is Applied Behavior Analysis (ABA)?</p>
+          <p>
+            “Applied behavior analysis (ABA) is a science that uses principles
+            of learning and motivation that have come from decades of scientific
+            research to solve problems of behavior that matter to society."
+            (Tarbox & Tarbox, 2017)
+          </p>
+          <p>
+            If you are a parent, friend, or relative of a child with special
+            needs or a child who is normally developed but who has very
+            challenging behavior, it is likely that you have asked yourself on
+            repeating occasions: why does my child behave like that, and what
+            can I do about it? I would also imagine that most of your answers
+            are ascribed to circular reasoning: he does it because he is
+            autistic, he has ADHD, or it is due to some other diagnosis.
+          </p>
+          <p>
+            ABA does not deny the value of a diagnosis but rather finds the
+            ‘why’ in another domain: The environment. In other words, we would
+            not justify a tantrum with an immature or undeveloped brain and so
+            wait or hope that he outgrows phase. Applied behavior analysis
+            believes and works on the basis that every behavior has a purpose in
+            one’s environment, and the behavior will only survive if that
+            purpose is fulfilled.
+          </p>
+          <p>
+            ABA scientific approach has been successfully used among different
+            populations with a special impact within the ASD community. More
+            than 1000 published studies support ABA as an evidence-based
+            treatment for autism. (National Autism Center, 2015)
+          </p>
+        </div>
+        <div>
+          
+          <img src="imgs/Teacher and girl copy 2.png" alt="" />
+          <div>
+          <p>
+            LTW focuses on Early Intensive Behavioral Intervention (EIBI) where
+            learners start our services at an early age (2-6 years old).
+            Research has shown that this treatment approach produces the largest
+            gains when done consistently." (Tarbox & Tarbox, 2017)
+          </p>
+          <p>
+            We believe that every child with autism is able to learn- perhaps at
+            different levels and speeds, based on individual characteristics,
+            but important gains can be made when a combination of skills
+            acquisition and reduction of challenging behaviors is included
+            within a treatment plan. Our intervention primarily targets
+            communication, social, and self-help skills to either boost the
+            current client’s abilities or replace maladaptive behaviors.
+          </p>
+          <p>
+            LTW’s services are provided in our learner’s homes, schools, and
+            communities. In this way, we involve his/her support system within
+            our treatment which enhances the maintenance and generalization of
+            the intervention results.
+          </p>
+        </div>
+        </div>
+      </article>
     </main>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
