@@ -33,7 +33,6 @@ nav ul {
 header {
   width: 100vw;
   height: 56px;
-  border-bottom: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,12 +40,17 @@ header {
   top: 0;
   font-family: "Roboto", sans-serif;
   z-index: 99;
+  transition: all ease-in-out 250ms;
+}
+
+.active-header {
+    background-color: var(--header-color);
 }
 
 header > a {
-    height: 100%;
-    width: 50%;
-} 
+  height: 100%;
+  width: 50%;
+}
 
 .logo-cont {
   height: 100%;
@@ -59,19 +63,20 @@ header > a {
 
 .logo-cont h4 {
   color: #fff;
-  padding-left: 25px;
+  padding-left: 20px;
   font-weight: 300;
   font-size: 20px;
 }
 
 .logo {
-  height: 80%;
+  height: 70%;
   width: auto;
 }
 
 nav {
-  width: 40%;
+  width: 450px;
   height: 100%;
+  transition: all ease-in-out 250ms;
 }
 
 nav ul {
@@ -79,13 +84,13 @@ nav ul {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 nav ul li {
   position: relative;
   height: 100%;
-  width: 100%;
+  width: fit-content;
+  margin: 0 20px;
 }
 
 nav ul li a {
@@ -95,6 +100,7 @@ nav ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 
 nav ul li:nth-of-type(3) > a::after {
@@ -102,9 +108,13 @@ nav ul li:nth-of-type(3) > a::after {
   position: absolute;
   width: 15px;
   height: 15px;
-  right:5px;
+  right: -20px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+ul li a:hover {
+    color:rgba(255, 255,255, 0.5)
 }
 
 ul li a:hover::before {
@@ -124,14 +134,16 @@ ul li a:hover::before {
   bottom: -100%;
   left: 0;
   height: 56px;
-  width: calc(100% + 40px);
+  width: fit-content;
   background-color: var(--header-color);
+  align-items: center;
+  justify-content: center;
 }
 
 .sub-list li,
 .sub-list li a {
   height: 100%;
-  width: 100%;
+  width: 100px;
 }
 
 .sub-list li a:hover::before {
@@ -145,9 +157,161 @@ ul li a:hover::before {
 }
 
 nav ul li:nth-of-type(3):hover .sub-list {
-    display: block;
+  display: block;
 }
 
+.nav-hamburger-cont {
+  position: relative;
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+  display: none;
+  margin-right: 25px;
+  background-color: transparent;
+  border: none;
+}
+
+.hamburger {
+  height: 5px;
+  border-radius: 5px;
+  width: 100%;
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all ease-in-out 250ms;
+}
+
+.hamburger::before {
+  content: "";
+  width: 100%;
+  left: 0;
+  top: 10px;
+  height: 5px;
+  border-radius: 5px;
+  width: 100%;
+  position: absolute;
+  background-color: #fff;
+  transition: all ease-in-out 250ms;
+}
+
+.hamburger::after {
+  content: "";
+  width: 100%;
+  left: 0;
+  top: -10px;
+  height: 5px;
+  border-radius: 5px;
+  width: 100%;
+  position: absolute;
+  background-color: #fff;
+  transition: all ease-in-out 250ms;
+}
+
+@media screen and (max-width: 860px) {
+  .nav-hamburger-cont {
+    display: block;
+  }
+
+  .logo-cont {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 25px;
+  }
+
+  .logo-cont h4 {
+    color: #fff;
+    padding-left: 10px;
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+  .logo {
+    height: 70%;
+    width: auto;
+  }
+
+  nav {
+    width: 200px;
+    height: 350px;
+    position: absolute;
+    top: 56px;
+    right: -100%;
+    z-index: 99;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0 20px;
+  }
+
+  nav ul li:nth-of-type(3) > a::after {
+    content: url(imgs/down-arrow-white.svg);
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .sub-list {
+    display: none;
+    position: absolute;
+    bottom: 0%;
+    left: -140px;
+    height: 56px;
+    width: fit-content;
+    background-color: var(--header-color);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .active-nav {
+    right: 0;
+    background-color: var(--header-color);
+  }
+
+  .active-hamburger .hamburger {
+    background-color: transparent;
+  }
+  
+  .active-hamburger .hamburger::before {
+    top: 0px;
+    transform: rotate(45deg);
+  }
+  
+  .active-hamburger .hamburger::after {
+    top: 0px;
+    transform: rotate(-45deg);
+  }
+}
+
+@media screen and (max-width: 375px) {
+    .logo-cont h4 {
+        color: #fff;
+        padding-left: 10px;
+        font-weight: 300;
+        font-size: 16px;
+      }
+    
+      .logo-cont {
+        padding-left: 15px;
+      }
+}
+
+
+
+/*===================== HOME SECTION ==========================*/
 
 .home-parallax {
   background-image: url("./imgs/home.jpeg");
@@ -182,5 +346,5 @@ nav ul li:nth-of-type(3):hover .sub-list {
 
 .home h1 {
   color: var(--article-color);
-  z-index: 99;
+  z-index: 98;
 }
