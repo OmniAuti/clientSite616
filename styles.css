@@ -40,6 +40,12 @@ section button {
   bottom: 25px;
 }
 
+@media screen and (max-width: 860px) {
+  section button {
+    bottom: 75px;
+  }
+}
+
 section button img {
   width: 40px;
 }
@@ -59,6 +65,10 @@ nav ul {
 header {
   width: 100vw;
   height: 56px;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,6 +91,10 @@ header > a {
 .logo-cont {
   height: 100%;
   width: 100%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -108,6 +122,10 @@ nav {
 nav ul {
   height: 100%;
   width: 100%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
 }
@@ -123,6 +141,10 @@ nav ul li a {
   color: #fff;
   height: 100%;
   width: 100%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,6 +158,8 @@ nav ul li:nth-of-type(3) > a::after {
   height: 15px;
   right: -20px;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -150,6 +174,8 @@ ul li a:hover::before {
   width: 100%;
   height: 10px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   bottom: 0;
 }
@@ -204,6 +230,8 @@ nav ul li:nth-of-type(3):hover .sub-list {
   position: absolute;
   background-color: #fff;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   transition: all ease-in-out 250ms;
 }
@@ -242,6 +270,10 @@ nav ul li:nth-of-type(3):hover .sub-list {
   .logo-cont {
     height: 100%;
     width: 100vw;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -325,7 +357,6 @@ nav ul li:nth-of-type(3):hover .sub-list {
     bottom: 0px;
   }
 
-
   .active-nav {
     right: 0;
     background-color: var(--header-color);
@@ -337,11 +368,15 @@ nav ul li:nth-of-type(3):hover .sub-list {
 
   .active-hamburger .hamburger::before {
     top: 0px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
 
   .active-hamburger .hamburger::after {
     top: 0px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
 }
@@ -366,20 +401,13 @@ li a.active-page::before {
   width: 100%;
   height: 10px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   bottom: 0;
 }
 
 /*===================== HOME SECTION ==========================*/
-
-.home-parallax {
-  background-image: url("./imgs/home.jpeg");
-  background-position: center;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  background-attachment: fixed;
-}
 
 .home {
   background-image: url("./imgs/home.jpeg");
@@ -388,7 +416,12 @@ li a.active-page::before {
   background-repeat: no-repeat;
   background-position: center;
   width: 100vw;
+  max-width: 100vw;
   height: 100vh;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -444,7 +477,12 @@ li a.active-page::before {
   background-size: cover;
   background-attachment: fixed;
   width: 100vw;
+  max-width: 100vw;
   height: 100vh;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -501,7 +539,12 @@ li a.active-page::before {
   background-size: cover;
   background-attachment: fixed;
   width: 100vw;
+  max-width: 100vw;
   height: 100vh;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -537,40 +580,41 @@ li a.active-page::before {
 }
 
 .second-div-services {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .second-div-services-p {
-    width: 50%;
+  width: 50%;
 }
 
 @media screen and (max-width: 860px) {
-    .our-services h1 {
-      font-size: 5rem;
-      margin-top: 50vh;
-    }
-  
-    .our-services-article p {
-      line-height: 25px;
-      padding: 0px 15px;
-      margin: 50px 0px;
-      width: 100%
-    }
-
-    .second-div-services  {
-        flex-direction: column;
-        width: 100%
-      }
-
-      .second-div-services-p {
-          width: 100%;
-          padding: 0px 15px;
-      }
-      
-
+  .our-services h1 {
+    font-size: 5rem;
+    margin-top: 50vh;
   }
+
+  .our-services-article p {
+    line-height: 25px;
+    padding: 0px 15px;
+    margin: 50px 0px;
+    width: 100%;
+  }
+
+  .second-div-services {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .second-div-services-p {
+    width: 100%;
+    padding: 0px 15px;
+  }
+}
 
 /*===================== WHAT WE DO SECTION ==========================*/
 
@@ -581,7 +625,12 @@ li a.active-page::before {
   background-size: cover;
   background-attachment: fixed;
   width: 100vw;
+  max-width: 100vw;
   height: 100vh;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -617,12 +666,14 @@ li a.active-page::before {
 }
 
 .what-we-do-article > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
 }
-
 
 .what-we-do-article div p,
 .what-we-do-article div ul {
@@ -633,6 +684,10 @@ li a.active-page::before {
   list-style-type: square;
   padding: 25px;
   height: 100%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
 }
@@ -665,8 +720,6 @@ li a.active-page::before {
   .what-we-do-article div ul {
     width: 90%;
   }
-
- 
 }
 
 /*===================== CONTACT US SECTION ==========================*/
@@ -678,7 +731,12 @@ li a.active-page::before {
   background-size: cover;
   background-attachment: fixed;
   width: 100vw;
+  max-width: 100vw;
   height: 100vh;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -727,106 +785,124 @@ li a.active-page::before {
   }
 }
 
-
 /* ==================== CAROUSEL STUFF ========================== */
 
-.carousel-container{
-    height: 750px;
-    width: 500px;
-    overflow: hidden;
-    position: relative;
-    
+.carousel-container {
+  height: 750px;
+  width: 500px;
+  overflow: hidden;
+  position: relative;
 }
-.carousel, .carousel-two {
-    height: calc(100% - 20px);
-    width: 200%;
-    display: flex;
-    transition: transform ease 500ms;
-    flex-direction: row !important;
-    
+.carousel,
+.carousel-two {
+  height: calc(100% - 20px);
+  width: 200%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  transition: transform ease 500ms;
+  flex-direction: row !important;
 }
 
-.carousel img, .carousel-two img {
-    height: 100%;
-    width: 50%;
+.carousel img,
+.carousel-two img {
+  height: 100%;
+  width: 50%;
 }
 
 .carousel-controls-cont {
-    width: 100%;
-    height: 20px;
-    bottom: -20px;
-    display: flex;
-    flex-direction: row !important;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 20px;
+  bottom: -20px;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-control, .carousel-control-two {
-    background-color: rgba(0,0,0,0.5);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: auto 10px;
-    cursor: pointer;
+.carousel-control,
+.carousel-control-two {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: auto 10px;
+  cursor: pointer;
 }
 
 .carousel-arrows {
-position: absolute;
-top: 50%;
-transform:translateY(-50%);
-width: 100%;
-height: 100px;
-align-items: center;
-flex-direction: row!important;
-justify-content: space-between;
-padding: 10px;
-display: none;
-cursor: pointer;
-transition: all ease 250ms;
-z-index: 99;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  flex-direction: row !important;
+  justify-content: space-between;
+  padding: 10px;
+  display: none;
+  cursor: pointer;
+  transition: all ease 250ms;
+  z-index: 99;
 }
 
-.carousel-arrow, .carousel-arrow-two {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0,0,0,.5);
+.carousel-arrow,
+.carousel-arrow-two {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26px;
+  transition: all ease 250ms;
+}
+
+.carousel-container:hover .carousel-arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  transition: all ease 250ms;
+}
+
+@media screen and (max-width: 860px) {
+  .carousel-container {
+    max-height: 50%;
+    max-width: 95%;
+    width: auto;
+    height: 450px;
+  }
+
+  .carousel-arrow,
+  .carousel-arrow-two {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 26px;
+    font-size: 16px;
     transition: all ease 250ms;
+  }
 }
-
-.carousel-container:hover .carousel-arrows {
-    display: flex;
-    transition: all ease 250ms;
-}
-
-@media screen and (max-width: 860px) {
-    .carousel-container{
-        max-height: 50%;
-        max-width: 95%;
-        width: auto;
-        height: 450px;
-    }
-
-
-    .carousel-arrow, .carousel-arrow-two {
-        width: 40px;
-        height:40px;
-        background-color: rgba(0,0,0,.5);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 16px;
-        transition: all ease 250ms;
-    }
-
-
-}
-
-
