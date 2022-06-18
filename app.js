@@ -46,7 +46,6 @@ carouselControlsTwo.forEach(control => {
 
 const carouselArrows = document.querySelectorAll('.carousel-arrow')
 const controlArrowArr = Array.from(carouselArrows)
-console.log(carouselArrows, controlArrowArr)
 carouselArrows.forEach(control => {
     control.addEventListener('click', () => {
         
@@ -56,7 +55,6 @@ carouselArrows.forEach(control => {
 })
 const carouselArrowsTwo = document.querySelectorAll('.carousel-arrow-two')
 const controlArrowArrTwo = Array.from(carouselArrowsTwo)
-console.log(carouselArrows, controlArrowArr)
 carouselArrowsTwo.forEach(control => {
     control.addEventListener('click', () => {
         var idx = controlArrowArrTwo.indexOf(control) * -50
