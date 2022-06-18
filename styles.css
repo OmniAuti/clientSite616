@@ -13,6 +13,7 @@
 body,
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 article {
@@ -20,6 +21,12 @@ article {
   color: var(--article-text-color);
   font-family: "Georgia";
   padding: 25px 50px;
+}
+
+@media screen and (max-width: 860px) {
+  article {
+    padding: 25px 0px;
+  }
 }
 
 section button {
@@ -260,6 +267,7 @@ nav ul li:nth-of-type(3):hover .sub-list {
     top: 56px;
     right: -100%;
     z-index: 99;
+    overflow: hidden;
   }
 
   nav ul {
@@ -274,26 +282,49 @@ nav ul li:nth-of-type(3):hover .sub-list {
   }
 
   nav ul li:nth-of-type(3) > a::after {
-    content: url(imgs/down-arrow-white.svg);
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    content: "";
+  }
+  nav > ul > li:last-of-type {
+    margin-top: 70px;
   }
 
   .sub-list {
-    display: none;
-    position: absolute;
-    bottom: 0%;
-    left: -140px;
+    display: block;
+    position: relative;
+    bottom: 0;
+    left: -20px;
     height: 56px;
-    width: fit-content;
+    width: 100%;
     background-color: var(--header-color);
     align-items: center;
     justify-content: center;
   }
+
+  .sub-list li a {
+    text-align: center;
+    width: 200px;
+  }
+
+  .sub-list li:hover a::after {
+    content: "";
+    position: absolute;
+    background-color: var(--article-color);
+    width: 200%;
+    height: 10px;
+    right: -100px;
+    bottom: 0;
+  }
+
+  .active-page a::before {
+    content: "";
+    position: absolute;
+    background-color: var(--article-color);
+    width: 200%;
+    height: 10px;
+    right: -100px;
+    bottom: 0px;
+  }
+
 
   .active-nav {
     right: 0;
@@ -376,7 +407,7 @@ li a.active-page::before {
 .home h1 {
   color: var(--article-color);
   z-index: 98;
-  font-size: 36px;
+  font-size: 30px;
   text-align: center;
   margin-top: 35vh;
 }
@@ -394,6 +425,17 @@ li a.active-page::before {
   font-size: 20px;
   font-weight: 500;
 }
+
+@media screen and (max-width: 860px) {
+  .home-article h2,
+  .home-article p {
+    margin: 20px 25px;
+  }
+  .home-article h2 {
+    font-size: 30px;
+  }
+}
+/*===================== ABOUT US SECTION ==========================*/
 
 .about-us {
   background-image: url("./imgs/aboutUs.jpeg");
@@ -417,11 +459,12 @@ li a.active-page::before {
   font-size: 7rem;
   margin-top: 60vh;
   z-index: 98;
+  text-align: center;
 }
 
 .about-us::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -435,6 +478,21 @@ li a.active-page::before {
   font-weight: 500;
   font-family: "Roboto", sans-serif;
 }
+
+@media screen and (max-width: 860px) {
+  .about-us h1 {
+    font-size: 5rem;
+    margin-top: 40vh;
+  }
+
+  .about-us-article p {
+    line-height: 25px;
+    padding: 0px 15px;
+    margin: 25px 0px;
+  }
+}
+
+/*===================== OUR SERVICES SECTION ==========================*/
 
 .our-services {
   background-image: url("./imgs/pexels-artem-podrez-8087859.jpeg");
@@ -458,11 +516,12 @@ li a.active-page::before {
   font-size: 7rem;
   margin-top: 60vh;
   z-index: 98;
+  text-align: center;
 }
 
 .our-services::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -477,17 +536,46 @@ li a.active-page::before {
   font-family: "Roboto", sans-serif;
 }
 
-.our-services-article div:nth-of-type(2) {
-  display: flex;
+.second-div-services {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.our-services-article div:nth-of-type(2) img {
-  width: 45%;
-  height: auto;
+.second-div-services-p {
+    width: 50%;
 }
+
+@media screen and (max-width: 860px) {
+    .our-services h1 {
+      font-size: 5rem;
+      margin-top: 50vh;
+    }
+  
+    .our-services-article p {
+      line-height: 25px;
+      padding: 0px 15px;
+      margin: 50px 0px;
+      width: 100%
+    }
+
+    .second-div-services  {
+        flex-direction: column;
+        width: 100%
+      }
+
+      .second-div-services-p {
+          width: 100%;
+          padding: 0px 15px;
+      }
+      
+
+  }
+
+/*===================== WHAT WE DO SECTION ==========================*/
 
 .what-we-do {
-  background-image: url("./imgs/pexels-artem-podrez-8087859.jpeg");
+  background-image: url("./imgs/what-we-do.jpeg");
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -512,7 +600,7 @@ li a.active-page::before {
 
 .what-we-do::after {
   content: "";
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -528,17 +616,14 @@ li a.active-page::before {
   line-height: 35px;
 }
 
-.what-we-do-article div {
+.what-we-do-article > div {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
 }
 
-.what-we-do-article div img {
-  max-width: 50%;
-  max-height: 75vh;
-}
+
 .what-we-do-article div p,
 .what-we-do-article div ul {
   width: 50%;
@@ -559,46 +644,189 @@ li a.active-page::before {
   font-family: "Roboto", sans-serif;
 }
 
-
-.contact-us {
-    background-image: url("./imgs/pexels-jep-gambardella-6222770.jpeg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .contact-us h1 {
-    font-family: "Roboto", sans-serif;
-    color: #fff;
-    font-weight: 200;
-    font-size: 7rem;
-    margin-top: 60vh;
-    z-index: 98;
-  }
-  
-  .contact-us::after {
-    content: "";
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-  }
-  
-  .contact-us-article p {
-    line-height: 25px;
-    padding: 0px 25px;
-    margin: 50px 25px;
-    font-size: 20px;
-    font-weight: 500;
-    font-family: "Roboto", sans-serif;
-    line-height: 35px;
+@media screen and (max-width: 860px) {
+  .what-we-do h1 {
+    font-size: 5rem;
+    margin-top: 50vh;
     text-align: center;
   }
+
+  .what-we-do-article p {
+    line-height: 25px;
+    padding: 0px 10px;
+    margin: 50px 0px;
+  }
+
+  .what-we-do-article div {
+    flex-direction: column;
+  }
+
+  .what-we-do-article div p,
+  .what-we-do-article div ul {
+    width: 90%;
+  }
+
+ 
+}
+
+/*===================== CONTACT US SECTION ==========================*/
+
+.contact-us {
+  background-image: url("./imgs/pexels-jep-gambardella-6222770.jpeg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-us h1 {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-weight: 200;
+  font-size: 7rem;
+  margin-top: 60vh;
+  z-index: 98;
+}
+
+.contact-us::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.contact-us-article p {
+  line-height: 25px;
+  padding: 0px 25px;
+  margin: 50px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  line-height: 35px;
+  text-align: center;
+}
+
+@media screen and (max-width: 860px) {
+  .contact-us h1 {
+    font-size: 5rem;
+    margin-top: 50vh;
+    text-align: center;
+  }
+
+  .contact-us-article p {
+    padding: 10px 0px;
+    margin: 25px 0px;
+  }
+}
+
+
+/* ==================== CAROUSEL STUFF ========================== */
+
+.carousel-container{
+    height: 750px;
+    width: 500px;
+    overflow: hidden;
+    position: relative;
+    
+}
+.carousel, .carousel-two {
+    height: calc(100% - 20px);
+    width: 200%;
+    display: flex;
+    transition: transform ease 500ms;
+    flex-direction: row !important;
+    
+}
+
+.carousel img, .carousel-two img {
+    height: 100%;
+    width: 50%;
+}
+
+.carousel-controls-cont {
+    width: 100%;
+    height: 20px;
+    bottom: -20px;
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control, .carousel-control-two {
+    background-color: rgba(0,0,0,0.5);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: auto 10px;
+    cursor: pointer;
+}
+
+.carousel-arrows {
+position: absolute;
+top: 50%;
+transform:translateY(-50%);
+width: 100%;
+height: 100px;
+align-items: center;
+flex-direction: row!important;
+justify-content: space-between;
+padding: 10px;
+display: none;
+cursor: pointer;
+transition: all ease 250ms;
+z-index: 99;
+}
+
+.carousel-arrow, .carousel-arrow-two {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 26px;
+    transition: all ease 250ms;
+}
+
+.carousel-container:hover .carousel-arrows {
+    display: flex;
+    transition: all ease 250ms;
+}
+
+@media screen and (max-width: 860px) {
+    .carousel-container{
+        max-height: 50%;
+        max-width: 95%;
+        width: auto;
+        height: 450px;
+    }
+
+
+    .carousel-arrow, .carousel-arrow-two {
+        width: 40px;
+        height:40px;
+        background-color: rgba(0,0,0,.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 16px;
+        transition: all ease 250ms;
+    }
+
+
+}
+
+
