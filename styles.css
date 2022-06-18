@@ -16,6 +16,14 @@ html {
   overflow-x: hidden;
 }
 
+.parallax-img {
+    z-index: -1;
+        width: 100vw;
+        height: 120vh;
+        position: absolute;
+        object-fit: cover;
+        object-position: top;
+}
 article {
   background-color: var(--article-color);
   color: var(--article-text-color);
@@ -27,6 +35,10 @@ article {
   article {
     padding: 25px 0px;
   }
+}
+
+section {
+    overflow: hidden;
 }
 
 section button {
@@ -42,7 +54,7 @@ section button {
 
 @media screen and (max-width: 860px) {
   section button {
-    bottom: 75px;
+    bottom: 100px;
   }
 }
 
@@ -410,15 +422,9 @@ li a.active-page::before {
 /*===================== HOME SECTION ==========================*/
 
 .home {
-  background-image: url("./imgs/home.jpeg");
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -475,11 +481,6 @@ li a.active-page::before {
 /*===================== ABOUT US SECTION ==========================*/
 
 .about-us {
-  background-image: url("./imgs/aboutUs.jpeg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
@@ -524,7 +525,7 @@ li a.active-page::before {
 @media screen and (max-width: 860px) {
   .about-us h1 {
     font-size: 5rem;
-    margin-top: 30vh;
+    margin-top: 25vh;
   }
 
   .about-us-article p {
@@ -537,11 +538,6 @@ li a.active-page::before {
 /*===================== OUR SERVICES SECTION ==========================*/
 
 .our-services {
-  background-image: url("./imgs/pexels-artem-podrez-8087859.jpeg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
@@ -599,7 +595,7 @@ li a.active-page::before {
 @media screen and (max-width: 860px) {
   .our-services h1 {
     font-size: 5rem;
-    margin-top: 30vh;
+    margin-top: 25vh;
   }
 
   .our-services-article p {
@@ -623,15 +619,9 @@ li a.active-page::before {
 /*===================== WHAT WE DO SECTION ==========================*/
 
 .what-we-do {
-  background-image: url("./imgs/what-we-do.jpeg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -706,7 +696,7 @@ li a.active-page::before {
 @media screen and (max-width: 860px) {
   .what-we-do h1 {
     font-size: 5rem;
-    margin-top: 30vh;
+    margin-top: 25vh;
     text-align: center;
   }
 
@@ -729,15 +719,9 @@ li a.active-page::before {
 /*===================== CONTACT US SECTION ==========================*/
 
 .contact-us {
-  background-image: url("./imgs/pexels-jep-gambardella-6222770.jpeg");
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -779,7 +763,7 @@ li a.active-page::before {
 @media screen and (max-width: 860px) {
   .contact-us h1 {
     font-size: 5rem;
-    margin-top: 30vh;
+    margin-top: 25vh;
     text-align: center;
   }
 
