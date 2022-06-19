@@ -65,6 +65,6 @@ carouselArrowsTwo.forEach((control) => {
 const parllaxPic = document.querySelector('.parallax-img')
 
 window.addEventListener('scroll', () => {
-    var move = window.pageYOffset * 1.1
+    var move = window.pageYOffset * 1.05
     parllaxPic.style.transform = `translateY(${move}px)`
 })
